@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Besttripk</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+header{
+background:#0f172a;
+padding:20px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 0 10px black;
+}
+
+header h1{
+color:#22d3ee;
+font-size:38px;
+margin-bottom:15px;
+}
+
+.search-box input{
+width:90%;
+padding:14px;
+border:none;
+border-radius:12px;
+font-size:16px;
+}
+
+nav{
+margin-top:15px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+nav button{
+background:#0891b2;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+margin:20px;
+padding:35px;
+border-radius:20px;
+background:linear-gradient(to right,#0f172a,#1e293b);
+text-align:center;
+}
+
+.hero h2{
+font-size:30px;
+margin-bottom:15px;
+color:#22d3ee;
+}
+
+.btn{
+background:#06b6d4;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+margin-top:15px;
+font-size:15px;
+}
+
+.section-title{
+padding:20px;
+font-size:28px;
+color:#22d3ee;
+}
+
+.cards{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:20px;
+}
+
+.card{
+min-width:280px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.box{
+margin:20px;
+padding:20px;
+background:#1e293b;
+border-radius:20px;
+}
+
+.ticket-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+padding:20px;
+}
+
+.ticket-buttons button{
+background:#0f766e;
+color:white;
+border:none;
+padding:15px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.chat-box{
+margin-top:15px;
+}
+
+.chat-box input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🌍 My Besttripk</h1>
+
+<div class="search-box">
+<input type="text" id="searchInput"
+placeholder="Search hotels, destination, restaurants...">
+</div>
+
+<nav>
+
+<button onclick="scrollToSection('explore')">Explore</button>
+
+<button onclick="scrollToSection('hotel')">Hotels</button>
+
+<button onclick="scrollToSection('booking')">Booking</button>
+
+<button onclick="scrollToSection('services')">Services</button>
+
+<button onclick="scrollToSection('chat')">Chat</button>
+
+<button onclick="scrollToSection('contact')">Contact</button>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h2>✨ Start Your Journey</h2>
+
+<p>
+Vacation • Hotels • Flights • Restaurants • Cab • Adventure
+</p>
+
+<button class="btn"
+onclick="alert('Welcome To My Besttripk')">
+Explore Destination
+</button>
+
+</div>
+
+<!-- DESTINATION -->
+
+<h2 class="section-title" id="explore">
+🔥 Vacation Locations
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+
+<div class="card-content">
+
+<h3>Gangtok</h3>
+
+<p>Beautiful MG Marg & Mountains</p>
+
+<button class="btn"
+onclick="openMap('Gangtok')">
+Explore
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+<div class="card-content">
+
+<h3>Darjeeling</h3>
+
+<p>Tea Gardens & View Points</p>
+
+<button class="btn"
+onclick="openMap('Darjeeling')">
+Explore
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+
+<div class="card-content">
+
+<h3>Kalimpong</h3>
+
+<p>Nature & Adventure</p>
+
+<button class="btn"
+onclick="openMap('Kalimpong')">
+Explore
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HOTELS -->
+
+<h2 class="section-title" id="hotel">
+🏨 Hotels Search
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+
+<div class="card-content">
+
+<h3>Mountain View Hotel</h3>
+
+<p>₹2500/night</p>
+
+<button class="btn"
+onclick="bookNow()">
+Choose Room
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+
+<div class="card-content">
+
+<h3>Royal Palace Resort</h3>
+
+<p>₹5000/night</p>
+
+<button class="btn"
+onclick="bookNow()">
+Book Hotel
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TOURIST PACKAGE -->
+
+<h2 class="section-title">
+🎒 Tourist Packages
+</h2>
+
+<div class="ticket-buttons">
+
+<button onclick="bookNow()">
+Gangtok Package
+</button>
+
+<button onclick="bookNow()">
+Darjeeling Package
+</button>
+
+<button onclick="bookNow()">
+Kalimpong Package
+</button>
+
+</div>
+
+<!-- SERVICES -->
+
+<h2 class="section-title" id="services">
+📍 Nearby Services
+</h2>
+
+<div class="ticket-buttons">
+
+<button onclick="openMap('restaurant near me')">
+🍽 Restaurant Nearby
+</button>
+
+<button onclick="openMap('market near me')">
+🛍 Market Nearby
+</button>
+
+<button onclick="openMap('view point near me')">
+🌄 View Point Nearby
+</button>
+
+<button onclick="openMap('night club near me')">
+🌃 Night Club Nearby
+</button>
+
+<button onclick="openMap('bar near me')">
+🍷 Bar Nearby
+</button>
+
+<button onclick="openMap('hospital near me')">
+🏥 Hospital Nearby
+</button>
+
+<button onclick="openMap('police station near me')">
+🚓 Police Station Nearby
+</button>
+
+</div>
+
+<!-- BOOKING -->
+
+<h2 class="section-title" id="booking">
+✈️ Travel Booking
+</h2>
+
+<div class="ticket-buttons">
+
+<button onclick="openSite('https://www.irctc.co.in')">
+🚆 Train Ticket
+</button>
+
+<button onclick="openSite('https://www.makemytrip.com')">
+✈️ Flight Ticket
+</button>
+
+<button onclick="bookNow()">
+🚕 Cab Booking
+</button>
+
+<button onclick="bookNow()">
+🏍 Bike Hiring
+</button>
+
+<button onclick="bookNow()">
+🚘 Car Hiring
+</button>
+
+</div>
+
+<!-- AI TOOL -->
+
+<h2 class="section-title">
+🤖 AI Travel Assistant
+</h2>
+
+<div class="box">
+
+<p>
+AI can help you search hotels, locations,
+restaurants and tourist places.
+</p>
+
+<br>
+
+<input type="text"
+id="aiSearch"
+placeholder="Ask AI anything..."
+style="width:100%;padding:14px;border:none;border-radius:12px;">
+
+<button class="btn"
+onclick="aiSearch()">
+Search With AI
+</button>
+
+</div>
+
+<!-- CHAT -->
+
+<h2 class="section-title" id="chat">
+💬 Traveller Chat Group
+</h2>
+
+<div class="box">
+
+<p>👤 Rahul: Best place in Gangtok?</p>
+
+<br>
+
+<p>👤 Tenzing: MG Marg & Tsomgo Lake</p>
+
+<div class="chat-box">
+
+<input type="text"
+placeholder="Type your message...">
+
+<button class="btn">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="box" id="contact">
+
+<h2>📞 Contact Us</h2>
+
+<br>
+
+<p>Owner: Raj Pradhan</p>
+
+<br>
+
+<p>Phone: +91 6294433291</p>
+
+<br>
+
+<p>Email: anikhyatechnoworld@gmail.com</p>
+
+</div>
+
+<footer>
+
+🌍 My Besttripk © 2026
+
+</footer>
+
+<script>
+
+function openMap(place){
+
+window.open(
+'https://www.google.com/maps/search/' + place,
+'_blank'
+);
+
+}
+
+function bookNow(){
+
+alert('Booking Feature Coming Soon');
+
+}
+
+function openSite(site){
+
+window.open(site,'_blank');
+
+}
+
+function aiSearch(){
+
+let query =
+document.getElementById('aiSearch').value;
+
+window.open(
+'https://www.google.com/search?q=' + query,
+'_blank'
+);
+
+}
+
+function scrollToSection(id){
+
+document.getElementById(id)
+.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+</script>
+
+</body>
+</html>
